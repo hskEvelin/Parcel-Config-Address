@@ -35,7 +35,7 @@ done
 #save and load mysql database image to remote machine
 docker save -o parcel-mysql mysql/mysql-server:5.7.21
 vagrant ssh -c 'docker load -i /vagrant/parcel-mysql'
-vagrant ssh -c 'docker run --name=mysql --mount type=bind,src=/var/lib/jenkins/workspace/Parcel-Config-Address-Pipeline/scripts/,dst=/docker-entrypoint-initdb.d/  -e=MYSQL_ROOT_PASSWORD="mysql" -d mysql/mysql-server:5.7.21'
+vagrant ssh -c 'docker run --name=mysql --mount type=bind,src=/vagrant/scripts/,dst=/docker-entrypoint-initdb.d/  -e=MYSQL_ROOT_PASSWORD="mysql" -d mysql/mysql-server:5.7.21'
 
 #copy docker-compose file to remote machine
 vagrant ssh -c 'cp /vagrant/docker-compose.yml ~/'
