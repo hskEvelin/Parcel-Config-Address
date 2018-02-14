@@ -34,7 +34,7 @@ public class ParcelConfigAddressGUITest {
 
   @Test
   public void testParcelAddressGUI() throws Exception {
-    driver.get("http://vm.parcel.aps.com/ParcelConfigService/");
+    driver.get("http://vm.parcel.aps.com:1150/ParcelConfigService/");
     driver.findElement(By.id("cfg-recp-name")).click();
     driver.findElement(By.id("cfg-recp-name")).clear();
     driver.findElement(By.id("cfg-recp-name")).sendKeys("Lucas Greising");
