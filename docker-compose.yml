@@ -4,7 +4,7 @@ services:
     image: "parcelconfig-main"
     ports:
      - "1150:8080"
-  parcelsize:
+  parceladdress:
     image: "parcelconfig-address"
     ports:
      - "1200:1200"
