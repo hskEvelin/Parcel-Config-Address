@@ -1,0 +1,1 @@
+{"recipient":{"name":"Lucas Greising","street":"Sommerstraße","nr":"31","plz":"81543","city":"München","country":"Deutschland"},"sender":{"name":"Lucas Greising","street":"Bahnhofstraße","nr":"61","plz":"87543","city":"Kempten","firm":"Hochschule Kempten"},"size":"S","price":0}
