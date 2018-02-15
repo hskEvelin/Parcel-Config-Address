@@ -216,6 +216,7 @@ public class AddressServiceMain {
 		
 		try {
 			server = HttpServerFactory.create("http://localhost:1200/parcel");
+			server.setExecutor(java.util.concurrent.Executors.newCachedThreadPool());
 			server.start();
 			
 			//while(true){}
