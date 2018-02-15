@@ -9,8 +9,8 @@ ssh -p 2223 vagrant@127.0.0.1 'sudo /etc/init.d/haproxy reload'
 #upload new image to repository
 if [ -z ${parcelconfigaddress} ]; 
 then
-	echo "parcelconfigsize is unset";
-	echo "parcelconfigsize="$1>>versions
+	echo "parcelconfigaddress is unset";
+	echo "parcelconfigaddress="$1>>versions
 else
 	sed -i 's/^parcelconfigaddress=.*/parcelconfigaddress='$1'/g' versions
 fi
