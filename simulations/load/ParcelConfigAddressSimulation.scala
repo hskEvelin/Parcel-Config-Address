@@ -28,17 +28,17 @@ class ParcelConfigSizeSimulation extends Simulation {
     val uri1 = "vm.parcel.aps.com"
 
 	val scn = scenario("ParcelConfigSizeSimulation")
-		.exec(http("request_0")
+		.exec(http("webserver") 
 			.get("/ParcelConfigService/")
 			.headers(headers_0)
-			.resources(http("request_1")
+			.resources(http("image")
 			.get("/ParcelConfigService/images/icon_pakete.png")
 			.headers(headers_1)))
 		.pause(6)
-		.exec(http("request_2")
+		.exec(http("REST_Service")
 			.post("http://" + uri1 + ":1200/parcel/sent/address")
 			.headers(headers_2)
-			.body(RawFileBody("ParcelConfigSizeSimulation_0002_request.txt")))
+			.body(RawFileBody("ParcelConfigAddressSimulation_0002_request.txt")))
 
 	setUp(scn.inject(atOnceUsers(1000))).protocols(httpProtocol)
 }
