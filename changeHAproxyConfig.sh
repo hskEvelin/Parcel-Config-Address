@@ -7,13 +7,13 @@ ssh -p 2223 vagrant@127.0.0.1 'sudo /etc/init.d/haproxy reload'
 
 . versions
 #upload new image to repository
-if [ -z ${parcelconfigsize} ]; 
+if [ -z ${parcelconfigaddress} ]; 
 then
 	echo "parcelconfigsize is unset";
 	echo "parcelconfigsize="$1>>versions
 else
-	sed -i 's/^parcelconfigsize=.*/parcelconfigsize='$1'/g' versions
+	sed -i 's/^parcelconfigaddress=.*/parcelconfigaddress='$1'/g' versions
 fi
 
-sftp -oPort=2200 vagrant@127.0.0.1 <<< $'put parcelconfig-size repository/images/'
+sftp -oPort=2200 vagrant@127.0.0.1 <<< $'put parcelconfig-address repository/images/'
 sftp -oPort=2200 vagrant@127.0.0.1 <<< $'put versions repository/images/'
